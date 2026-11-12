@@ -1,9 +1,11 @@
 {
   "name": "chronos",
-  "version": "2.0.0",
+  "version": "2.5.0",
   "private": true,
+  "description": "Interactive map and timeline of human history with 54 sourced guided tours.",
   "scripts": {
-    "test": "node test/test.js && node test/smoke.js",
-    "start": "python3 -m http.server 8000"
+    "start": "python server.py",
+    "test": "node tools/run-tests.js",
+    "sources": "node tools/make-sources-md.js"
   }
 }
