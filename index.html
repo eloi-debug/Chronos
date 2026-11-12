@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chronos – 11,000 years of human history</title>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#slider">Skip to timeline</a>
+<div id="map" role="application" aria-label="Historical map"></div>
+<aside id="panel" aria-label="Tours and details">
+  <header><h1>Chronos</h1><p class="sub">Göbekli Tepe to today</p></header>
+  <label class="toggle"><input type="checkbox" id="mythToggle"> <span>Myths &amp; Mysteries layer <small>(off by default; legends, not verified history)</small></span></label>
+  <p id="mythNote" class="mythbox" hidden>Purple ✦ markers are legends or proposals. Open one to read its sources and what evidence does or does not support it. Unmapped legend: <span id="unmappedList"></span></p>
+
+  <section id="libraryView">
+    <h2 class="vh">Tour library</h2>
+    <div id="library"></div>
+    <details class="planned"><summary>Planned, not yet implemented</summary><ul id="plannedList"></ul></details>
+  </section>
+
+  <section id="tourView" hidden>
+    <div class="tourhead"><h2 id="tourTitle"></h2><span id="modeBadge" class="badge" role="status"></span></div>
+    <div id="progressText" class="small"></div>
+    <div class="progress" aria-hidden="true"><div id="progressBar"></div></div>
+    <div class="controls" role="group" aria-label="Tour controls">
+      <button id="tRestart" title="Restart tour" aria-label="Restart tour">⏮</button>
+      <button id="tPrev" title="Previous chapter" aria-label="Previous chapter">◀</button>
+      <button id="tPlay" aria-label="Play tour">▶ Play</button>
+      <button id="tNext" title="Next chapter" aria-label="Next chapter">▶▶</button>
+      <button id="tExit" title="Exit tour" aria-label="Exit tour">✕ Exit</button>
+    </div>
+    <div id="manualBanner" class="manual" hidden>Manual exploration: you changed the timeline or map. <button id="manualReturn">Return to chapter</button></div>
+    <ol id="chapterList" class="chapters" aria-label="Chapters"></ol>
+    <article id="chapterCard" aria-live="polite"></article>
+  </section>
+
+  <section id="detailView" hidden>
+    <button id="detailBack">← Back to library</button>
+    <article id="detailCard"></article>
+  </section>
+
+  <section id="legend" aria-label="Map legend">
+    <p><span class="sw direct"></span>Direct control <span class="sw alliance"></span>Alliance <span class="sw tributary"></span>Tributary <span class="sw conflict"></span>Conflict <span class="sw diffusion"></span>Diffusion <span class="sw influence"></span>Influence <span class="sw site"></span>Site</p>
+    <p class="small">Solid outlines are attested or exact. Dashed outlines are approximate, regional or schematic. Purple marks myth, legend or speculation.</p>
+  </section>
+  <footer>Borders: <a href="https://github.com/aourednik/historical-basemaps" target="_blank" rel="noopener">historical-basemaps</a> (GPL-3.0), shown as the nearest earlier snapshot, never interpolated. Basemap: OpenFreeMap / OpenStreetMap; coastlines are modern.</footer>
+</aside>
+<div id="bar">
+  <button id="play" title="Play / pause timeline" aria-label="Play or pause timeline">▶</button>
+  <div id="yearBox"><input id="yearInput" value="" aria-label="Jump to year (for example 500 BCE)"><span id="yearLabel"></span></div>
+  <div class="sliderwrap"><div id="rangeBand" hidden></div><input id="slider" type="range" min="0" max="1000" value="0" step="1" aria-label="Timeline"></div>
+  <div id="status" role="status"></div>
+</div>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="js/timeline.js"></script>
+<script src="js/tourlogic.js"></script>
+<script src="data/sources.js"></script>
+<script src="data/sites.js"></script>
+<script src="data/tours/overview.js"></script>
+<script src="data/tours/rome.js"></script>
+<script src="data/tours/greece.js"></script>
+<script src="data/tours/buddhism.js"></script>
+<script src="data/tours/myths.js"></script>
+<script src="data/planned.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

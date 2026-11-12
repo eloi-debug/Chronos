@@ -1,0 +1,9 @@
+{
+  "name": "chronos",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node test/test.js && node test/smoke.js",
+    "start": "python3 -m http.server 8000"
+  }
+}
