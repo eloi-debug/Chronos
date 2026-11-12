@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chronos – 11,000 years of human history</title>
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2.5">
+<link rel="stylesheet" href="tourmenu.css?v=2.5">
 </head>
 <body>
 <a class="skip" href="#slider">Skip to timeline</a>
@@ -18,7 +19,7 @@
   <section id="libraryView">
     <h2 class="vh">Tour library</h2>
     <div id="library"></div>
-    <details class="planned"><summary>Planned, not yet implemented</summary><ul id="plannedList"></ul></details>
+    <details class="planned" hidden><summary>Planned, not yet implemented</summary><ul id="plannedList"></ul></details>
   </section>
 
   <section id="tourView" hidden>
@@ -54,17 +55,85 @@
   <div class="sliderwrap"><div id="rangeBand" hidden></div><input id="slider" type="range" min="0" max="1000" value="0" step="1" aria-label="Timeline"></div>
   <div id="status" role="status"></div>
 </div>
+<script>
+window.addEventListener('error', function (e) {
+  var s = document.getElementById('status');
+  if (s) s.textContent = 'Script error: ' + e.message + ' (' + (e.filename || '').split('/').pop() + ':' + e.lineno + '). Try a hard refresh (Ctrl+Shift+R).';
+});
+</script>
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
-<script src="js/timeline.js"></script>
-<script src="js/tourlogic.js"></script>
-<script src="data/sources.js"></script>
-<script src="data/sites.js"></script>
-<script src="data/tours/overview.js"></script>
-<script src="data/tours/rome.js"></script>
-<script src="data/tours/greece.js"></script>
-<script src="data/tours/buddhism.js"></script>
-<script src="data/tours/myths.js"></script>
-<script src="data/planned.js"></script>
-<script src="js/app.js"></script>
+<script src="js/timeline.js?v=2.5"></script>
+<script src="js/tourlogic.js?v=2.5"></script>
+<script src="data/sources.js?v=2.5"></script>
+<script src="data/sources-batch1.js?v=2.5"></script>
+<script src="data/sources-batch2.js?v=2.5"></script>
+<script src="data/sources-batch3a.js?v=2.5"></script>
+<script src="data/sources-batch3b1.js?v=2.5"></script>
+<script src="data/sources-batch3b2.js?v=2.5"></script>
+<script src="data/sources-batch4a.js?v=2.5"></script>
+<script src="data/sources-batch4b.js?v=2.5"></script>
+<script src="data/sources-batch4c.js?v=2.5"></script>
+<script src="data/sources-batch4d.js?v=2.5"></script>
+<script src="data/sources-batch4e.js?v=2.5"></script>
+<script src="data/sources-batch5.js?v=2.5"></script>
+<script src="data/sources-batch6.js?v=2.5"></script>
+<script src="data/sites.js?v=2.5"></script>
+<script src="data/tours/overview.js?v=2.5"></script>
+<script src="data/tours/rome.js?v=2.5"></script>
+<script src="data/tours/greece.js?v=2.5"></script>
+<script src="data/tours/weimar.js?v=2.5"></script>
+<script src="data/tours/british-empire.js?v=2.5"></script>
+<script src="data/tours/byzantium.js?v=2.5"></script>
+<script src="data/tours/hre.js?v=2.5"></script>
+<script src="data/tours/persia.js?v=2.5"></script>
+<script src="data/tours/buddhism.js?v=2.5"></script>
+<script src="data/tours/myths.js?v=2.5"></script>
+<script src="data/tours/egypt.js?v=2.5"></script>
+<script src="data/tours/macedonia.js?v=2.5"></script>
+<script src="data/tours/china.js?v=2.5"></script>
+<script src="data/tours/mongol.js?v=2.5"></script>
+<script src="data/tours/ottoman.js?v=2.5"></script>
+<script src="data/tours/christianity.js?v=2.5"></script>
+<script src="data/tours/islam.js?v=2.5"></script>
+<script src="data/tours/hindu.js?v=2.5"></script>
+<script src="data/tours/daoism.js?v=2.5"></script>
+<script src="data/tours/troy.js?v=2.5"></script>
+<script src="data/tours/greek-roman-religion.js?v=2.5"></script>
+<script src="data/tours/mesopotamian-religion.js?v=2.5"></script>
+<script src="data/tours/mahabharata.js?v=2.5"></script>
+<script src="data/tours/russian-empire.js?v=2.5"></script>
+<script src="data/tours/communism.js?v=2.5"></script>
+<script src="data/tours/british-empire-2.js?v=2.5"></script>
+<script src="data/tours/ottoman-empire-2.js?v=2.5"></script>
+<script src="data/tours/islam-2.js?v=2.5"></script>
+<script src="data/tours/maya.js?v=2.5"></script>
+<script src="data/tours/aztec.js?v=2.5"></script>
+<script src="data/tours/inca.js?v=2.5"></script>
+<script src="data/tours/japan.js?v=2.5"></script>
+<script src="data/tours/indus-valley.js?v=2.5"></script>
+<script src="data/tours/mauryan-empire.js?v=2.5"></script>
+<script src="data/tours/vikings.js?v=2.5"></script>
+<script src="data/tours/cold-war.js?v=2.5"></script>
+<script src="data/tours/decolonisation.js?v=2.5"></script>
+<script src="data/tours/west-african-empires.js?v=2.5"></script>
+<script src="data/tours/rome-persia-frontier.js?v=2.5"></script>
+<script src="data/tours/buddhism-after-ashoka.js?v=2.5"></script>
+<script src="data/tours/mongolia-after-empire.js?v=2.5"></script>
+<script src="data/tours/swahili-coast.js?v=2.5"></script>
+<script src="data/tours/vietnam-war.js?v=2.5"></script>
+<script src="data/tours/indigenous-north-america.js?v=2.5"></script>
+<script src="data/tours/colonial-america-revolution.js?v=2.5"></script>
+<script src="data/tours/us-slavery-civil-war.js?v=2.5"></script>
+<script src="data/tours/us-expansion-removal.js?v=2.5"></script>
+<script src="data/tours/us-twentieth-century.js?v=2.5"></script>
+<script src="data/tours/canada-new-france.js?v=2.5"></script>
+<script src="data/tours/canada-since-confederation.js?v=2.5"></script>
+<script src="data/tours/old-testament-places.js?v=2.5"></script>
+<script src="data/tours/new-testament-places.js?v=2.5"></script>
+<script src="data/planned.js?v=2.5"></script>
+<script src="data/tour-meta.js?v=2.5"></script>
+<script src="js/tourindex.js?v=2.5"></script>
+<script src="js/app.js?v=2.5"></script>
+<script src="js/tourmenu.js?v=2.5"></script>
 </body>
 </html>

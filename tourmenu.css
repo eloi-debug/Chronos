@@ -1,0 +1,11 @@
+.tourmenu{margin:0 0 12px;padding:10px;border:1px solid #5a5242;border-radius:8px;background:#24211b}
+.tourmenu h2{margin:0 0 6px;font-size:15px;color:#f0cf8f}
+.tourmenu label{display:block;font-size:12px;color:#c9c3b6;margin:8px 0 3px}
+.tourmenu .tmmodes{display:flex;gap:14px;flex-wrap:wrap}
+.tourmenu .tmmodes label{display:inline-flex;align-items:center;gap:5px;margin:2px 0;font-size:13px;color:#f2efe8}
+.tourmenu select{width:100%;max-width:100%;background:#2e2b24;color:#f2efe8;border:1px solid #7a705c;border-radius:6px;padding:6px 8px;font-size:14px}
+.tourmenu optgroup{color:#f0cf8f;font-style:normal}
+.tourmenu option{color:#f2efe8}
+.tourmenu button{margin-top:8px;background:#3a3320;border:1px solid #f0cf8f;color:#f2efe8;border-radius:6px;padding:6px 14px;font-size:14px;cursor:pointer}
+.tourmenu button:disabled{opacity:.5;cursor:not-allowed}
+.tourmenu #tmInfo{margin:8px 0 0;line-height:1.35}
